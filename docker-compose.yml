@@ -1,0 +1,22 @@
+
+#docker network create --driver bridge --subnet=172.30.10.0/24 wep-net
+
+services:
+     flask:
+        build: .
+        #build: pydocker/3.12
+        container_name: flask-3.12
+        working_dir: /app
+        volumes:
+          #- .:/library
+          - .:/home/master/Project_me/python/python/project_2025/docker/flask/library
+        ports:
+          - "5000:8080"
+        #environment:
+        networks:
+            web-net:
+              ipv4_address: 172.30.10.8
+
+networks:
+    web-net:
+        external: true

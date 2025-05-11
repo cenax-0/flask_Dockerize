@@ -9,7 +9,7 @@ services:
         working_dir: /app
         volumes:
           #- .:/library
-          - .:/home/master/Project_me/python/python/project_2025/docker/flask/library
+          - .:~/Project_me/python/python/project_2025/docker/flask/library
         ports:
           - "5000:8080"
         #environment:
